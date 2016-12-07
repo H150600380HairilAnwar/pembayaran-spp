@@ -41,16 +41,16 @@ Partial Class Tabel_SPP
         Me.Bulan_bayarTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.NominalSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.KeteranganTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonCari = New System.Windows.Forms.Button()
+        Me.TextCari = New System.Windows.Forms.TextBox()
+        Me.ButtonHapus = New System.Windows.Forms.Button()
+        Me.ButtonEdit = New System.Windows.Forms.Button()
+        Me.ButtonTambah = New System.Windows.Forms.Button()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
+        Me.ButtonKeluar = New System.Windows.Forms.Button()
+        Me.ButtonBatal = New System.Windows.Forms.Button()
+        Me.ButtonSimpan = New System.Windows.Forms.Button()
         Id_sppLabel = New System.Windows.Forms.Label()
         Bulan_bayarLabel = New System.Windows.Forms.Label()
         NominalLabel = New System.Windows.Forms.Label()
@@ -64,6 +64,42 @@ Partial Class Tabel_SPP
         CType(Me.NominalSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KeteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Id_sppLabel
+        '
+        Id_sppLabel.AutoSize = True
+        Id_sppLabel.Location = New System.Drawing.Point(15, 29)
+        Id_sppLabel.Name = "Id_sppLabel"
+        Id_sppLabel.Size = New System.Drawing.Size(39, 13)
+        Id_sppLabel.TabIndex = 0
+        Id_sppLabel.Text = "Id spp:"
+        '
+        'Bulan_bayarLabel
+        '
+        Bulan_bayarLabel.AutoSize = True
+        Bulan_bayarLabel.Location = New System.Drawing.Point(15, 55)
+        Bulan_bayarLabel.Name = "Bulan_bayarLabel"
+        Bulan_bayarLabel.Size = New System.Drawing.Size(66, 13)
+        Bulan_bayarLabel.TabIndex = 2
+        Bulan_bayarLabel.Text = "Bulan bayar:"
+        '
+        'NominalLabel
+        '
+        NominalLabel.AutoSize = True
+        NominalLabel.Location = New System.Drawing.Point(15, 81)
+        NominalLabel.Name = "NominalLabel"
+        NominalLabel.Size = New System.Drawing.Size(48, 13)
+        NominalLabel.TabIndex = 4
+        NominalLabel.Text = "Nominal:"
+        '
+        'KeteranganLabel
+        '
+        KeteranganLabel.AutoSize = True
+        KeteranganLabel.Location = New System.Drawing.Point(15, 107)
+        KeteranganLabel.Name = "KeteranganLabel"
+        KeteranganLabel.Size = New System.Drawing.Size(65, 13)
+        KeteranganLabel.TabIndex = 6
+        KeteranganLabel.Text = "Keterangan:"
         '
         'Pembayaran_sppDataSet
         '
@@ -94,9 +130,9 @@ Partial Class Tabel_SPP
         Me.SppDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SppDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.SppDataGridView.DataSource = Me.SppBindingSource
-        Me.SppDataGridView.Location = New System.Drawing.Point(341, 80)
+        Me.SppDataGridView.Location = New System.Drawing.Point(253, 72)
         Me.SppDataGridView.Name = "SppDataGridView"
-        Me.SppDataGridView.Size = New System.Drawing.Size(445, 253)
+        Me.SppDataGridView.Size = New System.Drawing.Size(544, 231)
         Me.SppDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -125,9 +161,9 @@ Partial Class Tabel_SPP
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.ButtonHapus)
+        Me.GroupBox1.Controls.Add(Me.ButtonEdit)
+        Me.GroupBox1.Controls.Add(Me.ButtonTambah)
         Me.GroupBox1.Controls.Add(Id_sppLabel)
         Me.GroupBox1.Controls.Add(Me.Id_sppSpinEdit)
         Me.GroupBox1.Controls.Add(Bulan_bayarLabel)
@@ -136,185 +172,154 @@ Partial Class Tabel_SPP
         Me.GroupBox1.Controls.Add(Me.NominalSpinEdit)
         Me.GroupBox1.Controls.Add(KeteranganLabel)
         Me.GroupBox1.Controls.Add(Me.KeteranganTextEdit)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 46)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(323, 246)
+        Me.GroupBox1.Size = New System.Drawing.Size(235, 202)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SPP"
-        '
-        'Id_sppLabel
-        '
-        Id_sppLabel.AutoSize = True
-        Id_sppLabel.Location = New System.Drawing.Point(15, 33)
-        Id_sppLabel.Name = "Id_sppLabel"
-        Id_sppLabel.Size = New System.Drawing.Size(39, 13)
-        Id_sppLabel.TabIndex = 0
-        Id_sppLabel.Text = "Id spp:"
         '
         'Id_sppSpinEdit
         '
         Me.Id_sppSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SppBindingSource, "Id_spp", True))
         Me.Id_sppSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.Id_sppSpinEdit.Location = New System.Drawing.Point(87, 30)
+        Me.Id_sppSpinEdit.Enabled = False
+        Me.Id_sppSpinEdit.Location = New System.Drawing.Point(87, 26)
         Me.Id_sppSpinEdit.Name = "Id_sppSpinEdit"
         Me.Id_sppSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.Id_sppSpinEdit.Size = New System.Drawing.Size(100, 20)
+        Me.Id_sppSpinEdit.Size = New System.Drawing.Size(85, 20)
         Me.Id_sppSpinEdit.TabIndex = 1
-        '
-        'Bulan_bayarLabel
-        '
-        Bulan_bayarLabel.AutoSize = True
-        Bulan_bayarLabel.Location = New System.Drawing.Point(15, 59)
-        Bulan_bayarLabel.Name = "Bulan_bayarLabel"
-        Bulan_bayarLabel.Size = New System.Drawing.Size(66, 13)
-        Bulan_bayarLabel.TabIndex = 2
-        Bulan_bayarLabel.Text = "Bulan bayar:"
         '
         'Bulan_bayarTextEdit
         '
         Me.Bulan_bayarTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SppBindingSource, "Bulan_bayar", True))
-        Me.Bulan_bayarTextEdit.Location = New System.Drawing.Point(87, 56)
+        Me.Bulan_bayarTextEdit.Enabled = False
+        Me.Bulan_bayarTextEdit.Location = New System.Drawing.Point(87, 52)
         Me.Bulan_bayarTextEdit.Name = "Bulan_bayarTextEdit"
         Me.Bulan_bayarTextEdit.Size = New System.Drawing.Size(100, 20)
         Me.Bulan_bayarTextEdit.TabIndex = 3
-        '
-        'NominalLabel
-        '
-        NominalLabel.AutoSize = True
-        NominalLabel.Location = New System.Drawing.Point(15, 85)
-        NominalLabel.Name = "NominalLabel"
-        NominalLabel.Size = New System.Drawing.Size(48, 13)
-        NominalLabel.TabIndex = 4
-        NominalLabel.Text = "Nominal:"
         '
         'NominalSpinEdit
         '
         Me.NominalSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SppBindingSource, "Nominal", True))
         Me.NominalSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.NominalSpinEdit.Location = New System.Drawing.Point(87, 82)
+        Me.NominalSpinEdit.Enabled = False
+        Me.NominalSpinEdit.Location = New System.Drawing.Point(87, 78)
         Me.NominalSpinEdit.Name = "NominalSpinEdit"
         Me.NominalSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.NominalSpinEdit.Size = New System.Drawing.Size(100, 20)
+        Me.NominalSpinEdit.Size = New System.Drawing.Size(141, 20)
         Me.NominalSpinEdit.TabIndex = 5
-        '
-        'KeteranganLabel
-        '
-        KeteranganLabel.AutoSize = True
-        KeteranganLabel.Location = New System.Drawing.Point(15, 111)
-        KeteranganLabel.Name = "KeteranganLabel"
-        KeteranganLabel.Size = New System.Drawing.Size(65, 13)
-        KeteranganLabel.TabIndex = 6
-        KeteranganLabel.Text = "Keterangan:"
         '
         'KeteranganTextEdit
         '
         Me.KeteranganTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SppBindingSource, "Keterangan", True))
-        Me.KeteranganTextEdit.Location = New System.Drawing.Point(87, 108)
+        Me.KeteranganTextEdit.Enabled = False
+        Me.KeteranganTextEdit.Location = New System.Drawing.Point(87, 104)
         Me.KeteranganTextEdit.Name = "KeteranganTextEdit"
-        Me.KeteranganTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.KeteranganTextEdit.Size = New System.Drawing.Size(141, 20)
         Me.KeteranganTextEdit.TabIndex = 7
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(18, 165)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Tambah"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(124, 165)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Edit "
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(221, 165)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Hapus"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(12, 298)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Batal"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(260, 298)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Simpan"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(341, 339)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Refresh"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(711, 339)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Keluar"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(711, 54)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(75, 23)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Cari"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(341, 54)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(364, 20)
-        Me.TextBox1.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 19)
+        Me.Label1.Font = New System.Drawing.Font("Darktech LDR", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 13)
+        Me.Label1.Size = New System.Drawing.Size(368, 16)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "PEMBAYARAN SPP"
+        '
+        'ButtonCari
+        '
+        Me.ButtonCari.Location = New System.Drawing.Point(722, 46)
+        Me.ButtonCari.Name = "ButtonCari"
+        Me.ButtonCari.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonCari.TabIndex = 15
+        Me.ButtonCari.Text = "Cari"
+        Me.ButtonCari.UseVisualStyleBackColor = True
+        '
+        'TextCari
+        '
+        Me.TextCari.Location = New System.Drawing.Point(253, 46)
+        Me.TextCari.Name = "TextCari"
+        Me.TextCari.Size = New System.Drawing.Size(463, 20)
+        Me.TextCari.TabIndex = 16
+        '
+        'ButtonHapus
+        '
+        Me.ButtonHapus.Location = New System.Drawing.Point(151, 172)
+        Me.ButtonHapus.Name = "ButtonHapus"
+        Me.ButtonHapus.Size = New System.Drawing.Size(61, 23)
+        Me.ButtonHapus.TabIndex = 14
+        Me.ButtonHapus.Text = "Hapus"
+        Me.ButtonHapus.UseVisualStyleBackColor = True
+        '
+        'ButtonEdit
+        '
+        Me.ButtonEdit.Location = New System.Drawing.Point(87, 172)
+        Me.ButtonEdit.Name = "ButtonEdit"
+        Me.ButtonEdit.Size = New System.Drawing.Size(61, 23)
+        Me.ButtonEdit.TabIndex = 13
+        Me.ButtonEdit.Text = "Edit"
+        Me.ButtonEdit.UseVisualStyleBackColor = True
+        '
+        'ButtonTambah
+        '
+        Me.ButtonTambah.Location = New System.Drawing.Point(23, 172)
+        Me.ButtonTambah.Name = "ButtonTambah"
+        Me.ButtonTambah.Size = New System.Drawing.Size(61, 23)
+        Me.ButtonTambah.TabIndex = 12
+        Me.ButtonTambah.Text = "Tambah"
+        Me.ButtonTambah.UseVisualStyleBackColor = True
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Location = New System.Drawing.Point(253, 307)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonRefresh.TabIndex = 19
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
+        'ButtonKeluar
+        '
+        Me.ButtonKeluar.Location = New System.Drawing.Point(722, 307)
+        Me.ButtonKeluar.Name = "ButtonKeluar"
+        Me.ButtonKeluar.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonKeluar.TabIndex = 18
+        Me.ButtonKeluar.Text = "Keluar"
+        Me.ButtonKeluar.UseVisualStyleBackColor = True
+        '
+        'ButtonBatal
+        '
+        Me.ButtonBatal.Location = New System.Drawing.Point(13, 247)
+        Me.ButtonBatal.Name = "ButtonBatal"
+        Me.ButtonBatal.Size = New System.Drawing.Size(74, 23)
+        Me.ButtonBatal.TabIndex = 21
+        Me.ButtonBatal.Text = "Batal"
+        Me.ButtonBatal.UseVisualStyleBackColor = True
+        '
+        'ButtonSimpan
+        '
+        Me.ButtonSimpan.Location = New System.Drawing.Point(173, 247)
+        Me.ButtonSimpan.Name = "ButtonSimpan"
+        Me.ButtonSimpan.Size = New System.Drawing.Size(74, 23)
+        Me.ButtonSimpan.TabIndex = 20
+        Me.ButtonSimpan.Text = "Simpan"
+        Me.ButtonSimpan.UseVisualStyleBackColor = True
         '
         'Tabel_SPP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(812, 391)
+        Me.ClientSize = New System.Drawing.Size(808, 336)
+        Me.Controls.Add(Me.ButtonBatal)
+        Me.Controls.Add(Me.ButtonSimpan)
+        Me.Controls.Add(Me.ButtonRefresh)
+        Me.Controls.Add(Me.ButtonKeluar)
+        Me.Controls.Add(Me.TextCari)
+        Me.Controls.Add(Me.ButtonCari)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SppDataGridView)
         Me.Name = "Tabel_SPP"
@@ -346,14 +351,14 @@ Partial Class Tabel_SPP
     Friend WithEvents Bulan_bayarTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents NominalSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents KeteranganTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ButtonHapus As System.Windows.Forms.Button
+    Friend WithEvents ButtonEdit As System.Windows.Forms.Button
+    Friend WithEvents ButtonTambah As System.Windows.Forms.Button
+    Friend WithEvents ButtonCari As System.Windows.Forms.Button
+    Friend WithEvents TextCari As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonRefresh As System.Windows.Forms.Button
+    Friend WithEvents ButtonKeluar As System.Windows.Forms.Button
+    Friend WithEvents ButtonBatal As System.Windows.Forms.Button
+    Friend WithEvents ButtonSimpan As System.Windows.Forms.Button
 End Class
