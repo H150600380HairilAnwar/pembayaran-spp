@@ -110,10 +110,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pembayaran_sppDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Tabel Siswa.Designer.vb">
-      <DependentUpon>Tabel Siswa.vb</DependentUpon>
+    <Compile Include="Siswa.Designer.vb">
+      <DependentUpon>Siswa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tabel Siswa.vb">
+    <Compile Include="Siswa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tabel SPP.Designer.vb">
@@ -136,8 +136,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tabel Siswa.resx">
-      <DependentUpon>Tabel Siswa.vb</DependentUpon>
+    <EmbeddedResource Include="Siswa.resx">
+      <DependentUpon>Siswa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabel SPP.resx">
       <DependentUpon>Tabel SPP.vb</DependentUpon>
@@ -165,6 +165,15 @@
     <None Include="pembayaran_sppDataSet.xss">
       <DependentUpon>pembayaran_sppDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image bendera.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgrn45.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgrn1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
