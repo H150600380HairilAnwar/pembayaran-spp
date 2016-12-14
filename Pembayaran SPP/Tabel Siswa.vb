@@ -48,4 +48,14 @@
 
             MessageBox.Show("Data Telah Terhapus")
     End Sub
+
+    Private Sub ButtonBatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBatal.Click
+        SiswaBindingSource.CancelEdit()
+
+        ButtonTambah.Enabled = True
+        ButtonEdit.Enabled = True
+        ButtonHapus.Enabled = True
+        ButtonRefresh.Enabled = True
+        ButtonSimpan.Enabled = False
+    End Sub
 End Class
