@@ -58,4 +58,8 @@
         ButtonRefresh.Enabled = True
         ButtonSimpan.Enabled = False
     End Sub
+
+    Private Sub ButtonKeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonKeluar.Click
+        Me.Close()
+    End Sub
 End Class
