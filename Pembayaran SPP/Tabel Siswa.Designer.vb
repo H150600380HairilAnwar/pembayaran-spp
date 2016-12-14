@@ -39,9 +39,14 @@ Partial Class Tabel_Siswa
         Me.SiswaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonSimpan = New System.Windows.Forms.Button()
-        Me.Pembayaran_sppDataSet = New Pembayaran_SPP.pembayaran_sppDataSet()
+        Me.NISTextBox = New System.Windows.Forms.TextBox()
         Me.SiswaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Pembayaran_sppDataSet = New Pembayaran_SPP.pembayaran_sppDataSet()
+        Me.NamaTextBox = New System.Windows.Forms.TextBox()
+        Me.KelasTextBox = New System.Windows.Forms.TextBox()
+        Me.No_AbsenTextBox = New System.Windows.Forms.TextBox()
+        Me.JurusanTextBox = New System.Windows.Forms.TextBox()
+        Me.ButtonSimpan = New System.Windows.Forms.Button()
         Me.SiswaTableAdapter = New Pembayaran_SPP.pembayaran_sppDataSetTableAdapters.siswaTableAdapter()
         Me.TableAdapterManager = New Pembayaran_SPP.pembayaran_sppDataSetTableAdapters.TableAdapterManager()
         Me.SiswaDataGridView = New System.Windows.Forms.DataGridView()
@@ -50,11 +55,6 @@ Partial Class Tabel_Siswa
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NISTextBox = New System.Windows.Forms.TextBox()
-        Me.NamaTextBox = New System.Windows.Forms.TextBox()
-        Me.KelasTextBox = New System.Windows.Forms.TextBox()
-        Me.No_AbsenTextBox = New System.Windows.Forms.TextBox()
-        Me.JurusanTextBox = New System.Windows.Forms.TextBox()
         NISLabel = New System.Windows.Forms.Label()
         NamaLabel = New System.Windows.Forms.Label()
         KelasLabel = New System.Windows.Forms.Label()
@@ -62,10 +62,55 @@ Partial Class Tabel_Siswa
         JurusanLabel = New System.Windows.Forms.Label()
         CType(Me.SiswaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.Pembayaran_sppDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SiswaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Pembayaran_sppDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SiswaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'NISLabel
+        '
+        NISLabel.AutoSize = True
+        NISLabel.Location = New System.Drawing.Point(22, 25)
+        NISLabel.Name = "NISLabel"
+        NISLabel.Size = New System.Drawing.Size(28, 13)
+        NISLabel.TabIndex = 11
+        NISLabel.Text = "NIS:"
+        '
+        'NamaLabel
+        '
+        NamaLabel.AutoSize = True
+        NamaLabel.Location = New System.Drawing.Point(22, 51)
+        NamaLabel.Name = "NamaLabel"
+        NamaLabel.Size = New System.Drawing.Size(38, 13)
+        NamaLabel.TabIndex = 13
+        NamaLabel.Text = "Nama:"
+        '
+        'KelasLabel
+        '
+        KelasLabel.AutoSize = True
+        KelasLabel.Location = New System.Drawing.Point(22, 77)
+        KelasLabel.Name = "KelasLabel"
+        KelasLabel.Size = New System.Drawing.Size(36, 13)
+        KelasLabel.TabIndex = 15
+        KelasLabel.Text = "Kelas:"
+        '
+        'No_AbsenLabel
+        '
+        No_AbsenLabel.AutoSize = True
+        No_AbsenLabel.Location = New System.Drawing.Point(22, 103)
+        No_AbsenLabel.Name = "No_AbsenLabel"
+        No_AbsenLabel.Size = New System.Drawing.Size(57, 13)
+        No_AbsenLabel.TabIndex = 17
+        No_AbsenLabel.Text = "No Absen:"
+        '
+        'JurusanLabel
+        '
+        JurusanLabel.AutoSize = True
+        JurusanLabel.Location = New System.Drawing.Point(22, 129)
+        JurusanLabel.Name = "JurusanLabel"
+        JurusanLabel.Size = New System.Drawing.Size(47, 13)
+        JurusanLabel.TabIndex = 19
+        JurusanLabel.Text = "Jurusan:"
         '
         'ButtonBatal
         '
@@ -173,6 +218,56 @@ Partial Class Tabel_Siswa
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Siswa"
         '
+        'NISTextBox
+        '
+        Me.NISTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "NIS", True))
+        Me.NISTextBox.Location = New System.Drawing.Point(85, 22)
+        Me.NISTextBox.Name = "NISTextBox"
+        Me.NISTextBox.Size = New System.Drawing.Size(89, 20)
+        Me.NISTextBox.TabIndex = 12
+        '
+        'SiswaBindingSource1
+        '
+        Me.SiswaBindingSource1.DataMember = "siswa"
+        Me.SiswaBindingSource1.DataSource = Me.Pembayaran_sppDataSet
+        '
+        'Pembayaran_sppDataSet
+        '
+        Me.Pembayaran_sppDataSet.DataSetName = "pembayaran_sppDataSet"
+        Me.Pembayaran_sppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NamaTextBox
+        '
+        Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Nama", True))
+        Me.NamaTextBox.Location = New System.Drawing.Point(85, 48)
+        Me.NamaTextBox.Name = "NamaTextBox"
+        Me.NamaTextBox.Size = New System.Drawing.Size(169, 20)
+        Me.NamaTextBox.TabIndex = 14
+        '
+        'KelasTextBox
+        '
+        Me.KelasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Kelas", True))
+        Me.KelasTextBox.Location = New System.Drawing.Point(85, 74)
+        Me.KelasTextBox.Name = "KelasTextBox"
+        Me.KelasTextBox.Size = New System.Drawing.Size(46, 20)
+        Me.KelasTextBox.TabIndex = 16
+        '
+        'No_AbsenTextBox
+        '
+        Me.No_AbsenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "No_Absen", True))
+        Me.No_AbsenTextBox.Location = New System.Drawing.Point(85, 100)
+        Me.No_AbsenTextBox.Name = "No_AbsenTextBox"
+        Me.No_AbsenTextBox.Size = New System.Drawing.Size(46, 20)
+        Me.No_AbsenTextBox.TabIndex = 18
+        '
+        'JurusanTextBox
+        '
+        Me.JurusanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Jurusan", True))
+        Me.JurusanTextBox.Location = New System.Drawing.Point(85, 126)
+        Me.JurusanTextBox.Name = "JurusanTextBox"
+        Me.JurusanTextBox.Size = New System.Drawing.Size(169, 20)
+        Me.JurusanTextBox.TabIndex = 20
+        '
         'ButtonSimpan
         '
         Me.ButtonSimpan.Location = New System.Drawing.Point(173, 240)
@@ -181,16 +276,6 @@ Partial Class Tabel_Siswa
         Me.ButtonSimpan.TabIndex = 21
         Me.ButtonSimpan.Text = "Simpan"
         Me.ButtonSimpan.UseVisualStyleBackColor = True
-        '
-        'Pembayaran_sppDataSet
-        '
-        Me.Pembayaran_sppDataSet.DataSetName = "pembayaran_sppDataSet"
-        Me.Pembayaran_sppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SiswaBindingSource1
-        '
-        Me.SiswaBindingSource1.DataMember = "siswa"
-        Me.SiswaBindingSource1.DataSource = Me.Pembayaran_sppDataSet
         '
         'SiswaTableAdapter
         '
@@ -246,91 +331,6 @@ Partial Class Tabel_Siswa
         Me.DataGridViewTextBoxColumn5.HeaderText = "Jurusan"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
-        'NISLabel
-        '
-        NISLabel.AutoSize = True
-        NISLabel.Location = New System.Drawing.Point(22, 25)
-        NISLabel.Name = "NISLabel"
-        NISLabel.Size = New System.Drawing.Size(28, 13)
-        NISLabel.TabIndex = 11
-        NISLabel.Text = "NIS:"
-        '
-        'NISTextBox
-        '
-        Me.NISTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "NIS", True))
-        Me.NISTextBox.Location = New System.Drawing.Point(85, 22)
-        Me.NISTextBox.Name = "NISTextBox"
-        Me.NISTextBox.Size = New System.Drawing.Size(89, 20)
-        Me.NISTextBox.TabIndex = 12
-        '
-        'NamaLabel
-        '
-        NamaLabel.AutoSize = True
-        NamaLabel.Location = New System.Drawing.Point(22, 51)
-        NamaLabel.Name = "NamaLabel"
-        NamaLabel.Size = New System.Drawing.Size(38, 13)
-        NamaLabel.TabIndex = 13
-        NamaLabel.Text = "Nama:"
-        '
-        'NamaTextBox
-        '
-        Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Nama", True))
-        Me.NamaTextBox.Location = New System.Drawing.Point(85, 48)
-        Me.NamaTextBox.Name = "NamaTextBox"
-        Me.NamaTextBox.Size = New System.Drawing.Size(169, 20)
-        Me.NamaTextBox.TabIndex = 14
-        '
-        'KelasLabel
-        '
-        KelasLabel.AutoSize = True
-        KelasLabel.Location = New System.Drawing.Point(22, 77)
-        KelasLabel.Name = "KelasLabel"
-        KelasLabel.Size = New System.Drawing.Size(36, 13)
-        KelasLabel.TabIndex = 15
-        KelasLabel.Text = "Kelas:"
-        '
-        'KelasTextBox
-        '
-        Me.KelasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Kelas", True))
-        Me.KelasTextBox.Location = New System.Drawing.Point(85, 74)
-        Me.KelasTextBox.Name = "KelasTextBox"
-        Me.KelasTextBox.Size = New System.Drawing.Size(46, 20)
-        Me.KelasTextBox.TabIndex = 16
-        '
-        'No_AbsenLabel
-        '
-        No_AbsenLabel.AutoSize = True
-        No_AbsenLabel.Location = New System.Drawing.Point(22, 103)
-        No_AbsenLabel.Name = "No_AbsenLabel"
-        No_AbsenLabel.Size = New System.Drawing.Size(57, 13)
-        No_AbsenLabel.TabIndex = 17
-        No_AbsenLabel.Text = "No Absen:"
-        '
-        'No_AbsenTextBox
-        '
-        Me.No_AbsenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "No_Absen", True))
-        Me.No_AbsenTextBox.Location = New System.Drawing.Point(85, 100)
-        Me.No_AbsenTextBox.Name = "No_AbsenTextBox"
-        Me.No_AbsenTextBox.Size = New System.Drawing.Size(46, 20)
-        Me.No_AbsenTextBox.TabIndex = 18
-        '
-        'JurusanLabel
-        '
-        JurusanLabel.AutoSize = True
-        JurusanLabel.Location = New System.Drawing.Point(22, 129)
-        JurusanLabel.Name = "JurusanLabel"
-        JurusanLabel.Size = New System.Drawing.Size(47, 13)
-        JurusanLabel.TabIndex = 19
-        JurusanLabel.Text = "Jurusan:"
-        '
-        'JurusanTextBox
-        '
-        Me.JurusanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SiswaBindingSource1, "Jurusan", True))
-        Me.JurusanTextBox.Location = New System.Drawing.Point(85, 126)
-        Me.JurusanTextBox.Name = "JurusanTextBox"
-        Me.JurusanTextBox.Size = New System.Drawing.Size(169, 20)
-        Me.JurusanTextBox.TabIndex = 20
-        '
         'Tabel_Siswa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -350,8 +350,8 @@ Partial Class Tabel_Siswa
         CType(Me.SiswaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.Pembayaran_sppDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SiswaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Pembayaran_sppDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SiswaDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
