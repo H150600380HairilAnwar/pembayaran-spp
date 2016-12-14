@@ -206,6 +206,7 @@ Partial Class Tabel_Siswa
         Me.GroupBox1.Controls.Add(Me.KelasTextBox)
         Me.GroupBox1.Controls.Add(No_AbsenLabel)
         Me.GroupBox1.Controls.Add(Me.No_AbsenTextBox)
+        Me.GroupBox1.Controls.Add(Me.ButtonSimpan)
         Me.GroupBox1.Controls.Add(JurusanLabel)
         Me.GroupBox1.Controls.Add(Me.JurusanTextBox)
         Me.GroupBox1.Controls.Add(Me.ButtonHapus)
@@ -213,7 +214,7 @@ Partial Class Tabel_Siswa
         Me.GroupBox1.Controls.Add(Me.ButtonTambah)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 37)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(260, 211)
+        Me.GroupBox1.Size = New System.Drawing.Size(260, 226)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Siswa"
@@ -270,7 +271,7 @@ Partial Class Tabel_Siswa
         '
         'ButtonSimpan
         '
-        Me.ButtonSimpan.Location = New System.Drawing.Point(173, 240)
+        Me.ButtonSimpan.Location = New System.Drawing.Point(161, 203)
         Me.ButtonSimpan.Name = "ButtonSimpan"
         Me.ButtonSimpan.Size = New System.Drawing.Size(74, 23)
         Me.ButtonSimpan.TabIndex = 21
@@ -344,7 +345,6 @@ Partial Class Tabel_Siswa
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.ButtonSimpan)
         Me.Name = "Tabel_Siswa"
         Me.Text = "Tabel_Siswa"
         CType(Me.SiswaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

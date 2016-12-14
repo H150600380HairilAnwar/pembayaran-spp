@@ -62,4 +62,24 @@
     Private Sub ButtonKeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonKeluar.Click
         Me.Close()
     End Sub
+
+    Private Sub ButtonSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSimpan.Click
+        Me.Validate()
+        Me.SiswaBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Pembayaran_sppDataSet)
+
+        MessageBox.Show("Data Tersimpan")
+
+        NISTextBox.Enabled = False
+        NamaTextBox.Enabled = False
+        KelasTextBox.Enabled = False
+        No_AbsenTextBox.Enabled = False
+        JurusanTextBox.Enabled = False
+
+        ButtonTambah.Enabled = True
+        ButtonEdit.Enabled = True
+        ButtonHapus.Enabled = True
+        ButtonRefresh.Enabled = True
+        ButtonSimpan.Enabled = False
+    End Sub
 End Class
