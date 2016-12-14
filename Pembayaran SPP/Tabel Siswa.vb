@@ -37,4 +37,15 @@
         ButtonBatal.Enabled = True
         ButtonSimpan.Enabled = True
     End Sub
+
+    Private Sub ButtonHapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonHapus.Click
+        If MessageBox.Show("Hapus Data ?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            SiswaBindingSource.RemoveCurrent()
+
+            Me.Validate()
+            Me.SiswaBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.Pembayaran_sppDataSet)
+
+            MessageBox.Show("Data Telah Terhapus")
+    End Sub
 End Class
