@@ -47,6 +47,7 @@
             Me.TableAdapterManager.UpdateAll(Me.Pembayaran_sppDataSet)
 
             MessageBox.Show("Data Telah Terhapus")
+        End If
     End Sub
 
     Private Sub ButtonBatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBatal.Click
